@@ -3,4 +3,4 @@ WORKDIR /app
 COPY . /app
 EXPOSE 5001
 RUN ["npm", "install"]
-ENTRYPOINT [ "npm", "start" ]
+ENTRYPOINT [ "npm", "run", "start:dev" ]
