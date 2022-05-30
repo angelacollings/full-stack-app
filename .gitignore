@@ -2,3 +2,6 @@
 node_modules/
 
 .env
+
+# Coverage directory for testing
+coverage/
