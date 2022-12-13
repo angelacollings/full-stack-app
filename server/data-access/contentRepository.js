@@ -8,7 +8,7 @@ module.exports = {
       const { rows } = await pool.query(getAllContentSQL);
       return rows;
     } catch (e) {
-      throw new Error(`Database query failed: ${e.message}`);
+      throw new Error(`Database query failed: ${e.message}`, e.code);
     }
   },
 };

@@ -2,20 +2,7 @@ const { Pool } = require("pg");
 const request = require("supertest");
 
 const app = require("../app");
-
-const content = [
-    {
-      id: 1,
-      description:
-        "Some content"
-    },
-    {
-      id: 2,
-      description: "content"
-    },
-  ];
-
-// const content = require("../mocks/data");
+const content = require("../mocks/data");
 
 // setup to mock pg
 jest.mock("pg", () => {
@@ -40,7 +27,7 @@ describe('Given we have an "/api/content" endpoint', () => {
   it("When a valid GET request is made, then a 200 status code is returned with an array of questions", async () => {
     pool.query.mockResolvedValue({ rows: content });
     const checkBody = (res) => {
-      expect(res.body).toStrictEqual(content);
+      expect(res.body).toEqual(content);
       expect(pool.query).toBeCalledTimes(1);
       expect(pool.query).toHaveBeenCalledWith("SELECT * FROM content;");
     };
