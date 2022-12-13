@@ -1,8 +1,9 @@
 import React from "react";
+import "./ContentItem.css";
 
 const ContentItem = ({ description }) => {
   return (
-    <li className="contentItem">
+    <li className="content-card">
       <div className="content-info">
         <h3>{description}</h3>
       </div>
