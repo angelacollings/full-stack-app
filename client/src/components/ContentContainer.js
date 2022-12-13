@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ContentItem from "./ContentItem";
 import api from "../api";
+import "./ContentContainer.css";
 
 const ContentContainer = () => {
   const [loading, setLoading] = useState(false);
@@ -48,7 +49,6 @@ const ContentContainer = () => {
 
   return (
     <div className="content-container">
-      <h2>Content</h2>
       {loading && <div>Loading content...</div>}
       {error && <div>Error fetching content</div>}
       <ul className="content-list">
